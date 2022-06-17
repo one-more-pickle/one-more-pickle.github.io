@@ -1,0 +1,8 @@
+
+.dot {
+    background-color: aquamarine;
+    border-radius: 100px;
+    width: 4rem;
+    height: 4rem;
+    display: inline;
+}
