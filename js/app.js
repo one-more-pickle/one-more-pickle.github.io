@@ -4,13 +4,23 @@ const URL_API = "https://rickandmortyapi.com/api";
 
 const loadCharacters = () => fetch(URL_API+'/character').then(response => response.json());
 
-const buildCharacter = ({name, status, species}) => {
+const buildCharacter = ({name, status, species, image}) => {
     return `
-    <li>
-      <p><b>${name}</b</p>
-      <p>${status}</p>
-      <p>${species}</p>
-    </li>
+    <div syle='display:inline'>
+        <div class='character'>
+            <img src='${image}'>
+            <p>
+                <b>${name}</b
+                <br>
+                <br>
+                <br>
+                ${status}
+                <br>
+                <br>
+                ${species}
+            </p>
+        </div>
+    </div>
   `;
 };
 
@@ -20,9 +30,10 @@ const buildCharactersList = (data) => {
     if(data?.results?.length > 0){
         let allCharacters = '';
 
-        data.results.map( (element) =>
+        data.results.map( (element) =>{
+            console.log(element)
             allCharacters+=buildCharacter(element)
-        );
+        });
 
         characterList.innerHTML = allCharacters;
     }

@@ -16,8 +16,11 @@
             <a href='#'>Lienzo</a>
         </nav>
     </header>
-    <main class='grid-container'>
-        <input id="ndots" type="number" placeholder="Enter a number" oninput="draw()">
+    <main>
+        <div id='control'>
+            <input id="ndots" min="0" type="number" onKeyDown="return false" placeholder="Enter a number" oninput="draw()">
+            <button id="detonation" onclick="detonated()">Detonation</button>
+        </div>
         <div id='draw'></div>
     </main>
     <footer>
